@@ -1,0 +1,7 @@
+{
+  "name": "Twitter",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
