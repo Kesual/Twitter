@@ -1,8 +1,18 @@
 import { NgModule } from '@angular/core';
-import { NewMessageComponent } from './new-message/new-message';
+import { MessageTemplatesComponent } from './message-templates/message-templates';
+import {IonicModule} from "ionic-angular";
+import { MorningComponent } from './message-templates/morning/morning';
+import { EveningComponent } from './message-templates/evening/evening';
+
 @NgModule({
-	declarations: [NewMessageComponent],
-	imports: [],
-	exports: [NewMessageComponent]
+	declarations: [MessageTemplatesComponent,
+    MorningComponent,
+    EveningComponent],
+  imports: [
+    IonicModule
+  ],
+	exports: [MessageTemplatesComponent,
+    MorningComponent,
+    EveningComponent]
 })
 export class ComponentsModule {}
