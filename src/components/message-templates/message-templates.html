@@ -1,24 +1,23 @@
 <!-- Generated template for the MessageTemplatesComponent component -->
 
-
+<ion-content class="myContent">
   <ion-row>
-    <ion-col>
-      <ion-img alt="Twidder" height="100" width="100" src="../../assets/icon/Download.png"></ion-img>
-    </ion-col>
-    <ion-col margin>
-      <h3>Nachricht:</h3>
-    </ion-col>
+      <h1>Nachricht:</h1>
   </ion-row>
 
-  <ion-row>
-    <ion-slides>
+<ion-row margin>
+    <ion-slides pager="true" mode="ios">
       <ion-slide>
-        <morning></morning>
+   <ion-card>
+     <morning></morning>
+   </ion-card>
       </ion-slide>
       <ion-slide>
-        <evening></evening>
+        <ion-card>
+          <evening></evening>
+        </ion-card>
       </ion-slide>
     </ion-slides>
-  </ion-row>
-
+</ion-row>
+</ion-content>
 

@@ -1,11 +1,17 @@
 <!-- Generated template for the MorningComponent component -->
-<ng-container>
+<ion-card-content>
+  <div>
   <ngForm>
+    <ion-label>
+      Tweet für 08:00 Uhr:
+    </ion-label>
     <ion-item>
-      <ion-label>Tweet für 08:00 Uhr:</ion-label>
-      <ion-input type="text" placeholder="Tweet"></ion-input>
+      <ion-textarea [formControl]="morning" [placeholder]="holder"></ion-textarea>
     </ion-item>
-    Write Here:
-    <ion-textarea></ion-textarea>
+      <button ion-button full (click)="send()">Speichern</button>
   </ngForm>
-</ng-container>
+  <span>{{ max - toString(this.morning.value).length }} Zeichen</span>
+  </div>
+  <span class="success">{{success}}</span>
+</ion-card-content>
+<br>

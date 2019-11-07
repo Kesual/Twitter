@@ -1,9 +1,17 @@
 <!-- Generated template for the EveningComponent component -->
-<ng-container>
+<ion-card-content>
+  <div>
   <ngForm>
+    <ion-label>
+      Tweet für 18:00 Uhr:
+    </ion-label>
     <ion-item>
-      <ion-label>Tweet für 18:00 Uhr:</ion-label>
-      <ion-input type="text" placeholder="Tweet"></ion-input>
+      <ion-textarea [formControl]="evening" [placeholder]="holder"></ion-textarea>
     </ion-item>
+      <button ion-button full (click)="send()">Speichern</button>
   </ngForm>
-</ng-container>
+  <span>{{ max - toString(this.evening.value).length }} Zeichen</span>
+  </div>
+  <span class="success">{{success}}</span>
+</ion-card-content>
+<br>

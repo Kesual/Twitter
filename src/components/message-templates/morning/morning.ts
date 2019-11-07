@@ -1,22 +1,34 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {FormControl, Validators} from "@angular/forms";
+import {HttpClient} from "@angular/common/http";
 
-/**
- * Generated class for the MorningComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'morning',
   templateUrl: 'morning.html'
 })
 export class MorningComponent {
 
-  text: string;
+  holder = 'Schreibe hier deine Nachricht hin...';
+  morning = new FormControl('', [Validators.maxLength(280)]);
+  max: any = 280;
+  success;
 
-  constructor() {
-    console.log('Hello MorningComponent Component');
-    this.text = 'Hello World';
+  constructor(
+    private client: HttpClient
+  ) {}
+
+  toString(value): string {
+    return '' + value + '';
+  }
+
+  send() {
+    this.client.post('http://192.168.178.29:8001/api/morning', {data: this.morning.value})
+      .subscribe(
+        data => {
+          console.log('success', data);
+          this.success = 'Success';
+        },
+        error => console.log('oops', error));
   }
 
 }
